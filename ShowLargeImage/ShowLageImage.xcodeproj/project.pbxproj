@@ -23,6 +23,7 @@
 		27286F7F204C162B0082D370 /* BaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 27286F7E204C162A0082D370 /* BaseButton.m */; };
 		27286F81204C163F0082D370 /* 按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 27286F80204C163F0082D370 /* 按钮.png */; };
 		27286F84204C16570082D370 /* UIView+ViewAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 27286F83204C16570082D370 /* UIView+ViewAutoLayout.m */; };
+		275FD63B204D3FDC000099CB /* YEImageView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 275FD63A204D3FDC000099CB /* YEImageView1.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		27286F80204C163F0082D370 /* 按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "按钮.png"; sourceTree = "<group>"; };
 		27286F82204C16560082D370 /* UIView+ViewAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewAutoLayout.h"; sourceTree = "<group>"; };
 		27286F83204C16570082D370 /* UIView+ViewAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ViewAutoLayout.m"; sourceTree = "<group>"; };
+		275FD639204D3FDC000099CB /* YEImageView1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YEImageView1.h; sourceTree = "<group>"; };
+		275FD63A204D3FDC000099CB /* YEImageView1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YEImageView1.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +135,8 @@
 				27286F432049AF430082D370 /* LargeImageView.m */,
 				27286F45204A3B6B0082D370 /* YEImageView.h */,
 				27286F46204A3B6B0082D370 /* YEImageView.m */,
+				275FD639204D3FDC000099CB /* YEImageView1.h */,
+				275FD63A204D3FDC000099CB /* YEImageView1.m */,
 				27286F3F2049AAFD0082D370 /* UIImage+YEImage.h */,
 				27286F402049AAFD0082D370 /* UIImage+YEImage.m */,
 				27286F7A204AD3590082D370 /* YeFileManager.h */,
@@ -313,6 +318,7 @@
 			files = (
 				27286F84204C16570082D370 /* UIView+ViewAutoLayout.m in Sources */,
 				27286F47204A3B6B0082D370 /* YEImageView.m in Sources */,
+				275FD63B204D3FDC000099CB /* YEImageView1.m in Sources */,
 				27286F7F204C162B0082D370 /* BaseButton.m in Sources */,
 				27286F7C204AD35A0082D370 /* YeFileManager.m in Sources */,
 				27286F442049AF430082D370 /* LargeImageView.m in Sources */,

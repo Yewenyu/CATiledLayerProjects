@@ -18,6 +18,9 @@
 
 @implementation ViewController{
     LargeImageView *largeImageView;
+    BaseButton *button0;
+    BaseButton *button4;
+    BaseButton *button16;
     BaseButton *button36;
     BaseButton *button64;
     BaseButton *button100;
@@ -35,11 +38,25 @@
     /**截取按钮图片**/
     
     CGPoint center = self.view.center;
+    button0 = [BaseButton createButton:CGRectMake(0, 0, 100, 50) name:@"0" andAction:@selector(buttonAction:) andTarget:self];
+    [button0 setUpImage:btnImage andDownImage:btnImage];
+    center.y -= 250;
+    button0.center = center;
+    [self.view addSubview:button0];
+    button4 = [BaseButton createButton:CGRectMake(0, 0, 100, 50) name:@"4" andAction:@selector(buttonAction:) andTarget:self];
+    [button4 setUpImage:btnImage andDownImage:btnImage];
+    center.y += 50;
+    button4.center = center;
+    [self.view addSubview:button4];
+    button16 = [BaseButton createButton:CGRectMake(0, 0, 100, 50) name:@"16" andAction:@selector(buttonAction:) andTarget:self];
+    [button16 setUpImage:btnImage andDownImage:btnImage];
+    center.y += 50;
+    button16.center = center;
+    [self.view addSubview:button16];
     button36 = [BaseButton createButton:CGRectMake(0, 0, 100, 50) name:@"36" andAction:@selector(buttonAction:) andTarget:self];
     [button36 setUpImage:btnImage andDownImage:btnImage];
-    center.y -= 200;
+    center.y += 50;
     button36.center = center;
-    
     [self.view addSubview:button36];
     button64 = [BaseButton createButton:CGRectMake(0, 0, 100, 50) name:@"64" andAction:@selector(buttonAction:) andTarget:self];
     [button64 setUpImage:btnImage andDownImage:btnImage];
@@ -53,7 +70,7 @@
     [self.view addSubview:button100];
     
     UILabel *label = [BaseButton createLableWithFrame:CGRectZero andName:@"说明"];
-    label.text = @"三个按钮分别代表切片数量，可以这样理解，切片越多，内存峰值越低，绘制速度越慢，反之，切片越少，内存峰值越高，绘制速度越快";
+    label.text = @"六个按钮分别代表切片数量，第一个按钮是默认切片，第二个按钮是4切片，第三个按钮是16切片，以此类推，可以这样理解，切片越多，内存峰值越低，绘制速度越慢，反之，切片越少，内存峰值越高，绘制速度越快";
     label.frame = CGRectMake(0, 0, 300, 300);
     label.textAlignment = NSTextAlignmentCenter;
     center.y += 150;
@@ -69,6 +86,9 @@
     UIImage *btnImage = [UIImage imageNamed:@"按钮.png"];
     CGSize btnImageSize = CGSizeMake(btnImage.size.width, (btnImage.size.height-32)/2);
     UIImage *image = [btnImage getSubImage:CGRectMake(0, btnImageSize.height+32, btnImageSize.width, btnImageSize.height)];
+    [button0 removeFromSuperview];
+    [button4 removeFromSuperview];
+    [button16 removeFromSuperview];
     [button36 removeFromSuperview];
     [button64 removeFromSuperview];
     [button100 removeFromSuperview];
@@ -97,6 +117,9 @@
     [largeImageView removeFromSuperview];
     largeImageView = nil;
     
+    [self.view addSubview:button0];
+    [self.view addSubview:button4];
+    [self.view addSubview:button16];
     [self.view addSubview:button36];
     [self.view addSubview:button64];
     [self.view addSubview:button100];

@@ -9,6 +9,7 @@
 #import "LargeImageView.h"
 #import "UIImage+YEImage.h"
 #import "YEImageView.h"
+#import "YEImageView1.h"
 
 #define maxWidth 1920.0
 
@@ -16,6 +17,7 @@
     
     
     YEImageView *yeImageView;
+    YEImageView1 *yeImageView1;
     CGSize lastSize;
     
     
@@ -45,6 +47,8 @@
     [super layoutSubviews];
     
     yeImageView.frame = self.bounds;
+//    yeImageView1.frame = self.bounds;
+//    [yeImageView1 setNeedsDisplay];
     
 }
 
@@ -70,91 +74,12 @@
     YEImageView *imageView = [[YEImageView alloc]initWithImageName:_imageName andFrame:CGRectMake(0, 0, screenSize.width, screenSize.height) andTileCount:self.tileCount];
     [self addSubview:imageView];
     yeImageView = imageView;
+//    YEImageView1 *imageView = [[YEImageView1 alloc]initWithImageName:_imageName andFrame:CGRectMake(0, 0, screenSize.width, screenSize.height) andTileCount:self.tileCount];
+//    [self addSubview:imageView];
+//    yeImageView1 = imageView;
 
     
 }
-//-(void)selfInit{
-//
-//    CGRect bounds = [[UIScreen mainScreen]bounds];
-//    BOOL isWExactDivision = YES;
-//    BOOL isHExactDivision = YES;
-//    CGSize screenSize = bounds.size;
-//    CGSize viewSize = CGSizeZero;
-//    CGSize originImageSize = originImage.size;
-//    if(originImageSize.width>originImageSize.height){
-//        viewSize.width = screenSize.width;
-//        viewSize.height = screenSize.width/originImageSize.width*originImageSize.height;
-//        screenSize = viewSize;
-//    }
-//    NSInteger wCount = originImageSize.width/screenSize.width;
-//    if(wCount*screenSize.width<originImageSize.width){
-//        wCount +=1;
-//        isWExactDivision = NO;
-//    }
-//    NSInteger hCount = originImageSize.height/screenSize.height;
-//    if(hCount*screenSize.height<originImageSize.height){
-//        hCount +=1;
-//        isHExactDivision = NO;
-//    }
-//    CGSize imageScale = CGSizeMake(originImageSize.width/screenSize.width, originImageSize.height/screenSize.height);
-//    CGPoint lastImagePos = CGPointZero;
-//    CGPoint lastImageViewPos = CGPointZero;
-//    CGSize selfSize = CGSizeZero;
-//
-//    CGFloat subImageWidth = screenSize.width;
-//    CGFloat subImageHeight = screenSize.height;
-//    for(NSInteger i = 0;i<hCount;i++){
-//        if(i+1 == hCount){
-//            if(!isHExactDivision){
-//                subImageHeight = subImageHeight*hCount-originImageSize.height;
-//            }
-//
-//        }
-//        CGSize smallSize = CGSizeMake(subImageWidth/imageScale.width, subImageHeight/imageScale.height);
-//        for(NSInteger j=0;j<wCount;j++){
-//
-//            if(j+1 == wCount){
-//                if(!isWExactDivision){
-//                    subImageWidth = subImageWidth*wCount-originImageSize.width;
-//                    smallSize.width = subImageWidth/imageScale.width;
-//                }
-//
-//            }
-//
-//            UIImage *subImage = [originImage getSubImage:CGRectMake(lastImagePos.x, lastImagePos.y, subImageWidth, subImageHeight)];
-//            [subImageArray addObject:subImage];
-//
-//
-//
-//            UIImage *smallSubImage = [subImage scaleToSize:smallSize];
-//            UIImageView *subImageView = [[UIImageView alloc]initWithImage:smallSubImage];
-//            subImageView.frame = CGRectMake(lastImageViewPos.x, lastImageViewPos.y, smallSize.width, smallSize.height);
-//            [self addSubview:subImageView];
-//            [subImageViewArray addObject:subImageView];
-//
-//            lastImagePos.x += subImageWidth;
-//            lastImageViewPos.x += smallSize.width;
-//
-//            if(j+1 == wCount){
-//                lastImagePos.x = 0;
-//                lastImageViewPos.x = 0;
-//            }
-//            if(i<1){
-//                selfSize.width += smallSize.width;
-//            }
-//
-//        }
-//        lastImagePos.y += subImageHeight;
-//        lastImageViewPos.y += smallSize.height;
-//        if(i+1 == hCount){
-//            lastImagePos.y = 0;
-//            lastImageViewPos.y = 0;
-//        }
-//        selfSize.height += smallSize.height;
-//    }
-//
-//    self.frame = CGRectMake(0, 0, selfSize.width, selfSize.height);
-//}
 
 
 
